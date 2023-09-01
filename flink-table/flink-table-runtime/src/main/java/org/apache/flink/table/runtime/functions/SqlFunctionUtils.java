@@ -390,7 +390,9 @@ public class SqlFunctionUtils {
             return null;
         }
         String[] values = StringUtils.splitByWholeSeparatorPreserveAllTokens(str, separator);
-        if (index >= values.length) {
+        if (values.length == 0 && "".equals(str) && index==0){
+            retrun "";
+        } else if (index >= values.length) {
             return null;
         } else {
             return values[index];
@@ -410,7 +412,9 @@ public class SqlFunctionUtils {
             return null;
         }
         String[] values = StringUtils.splitPreserveAllTokens(str, (char) character);
-        if (index >= values.length) {
+        if (values.length == 0 && "".equals(str) && index==0){
+            retrun "";
+        } else if (index >= values.length) {
             return null;
         } else {
             return values[index];
